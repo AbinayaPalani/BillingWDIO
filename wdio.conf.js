@@ -113,7 +113,41 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+
+    services: ['chromedriver'],
+
+
+
+    // services: [ 
+    //     ['selenium-standalone', {
+    //         logPath: './temp',
+    //         args: {
+    //             version: "3.141.59",
+    //             seleniumArgs: ['-host', '127.0.0.1','-port', '5555']
+    //         },
+    //     }]
+    //     ],
+    //     capabilities: [{
+    //     browserName: 'chrome',
+    //     port: 5555
+    //     }],
+    // services: [
+    //     ['selenium-standalone', {
+    //         logPath: 'logs',
+    //         installArgs: {
+    //             drivers: {
+    //                 chrome: { version: '83.0.4103.116' }
+                  
+    //             }
+    //         },
+    //         args: {
+    //             drivers: {
+    //                 chrome: { version: '83.0.4103.116' }
+                  
+    //             }
+    //         },
+    //     }]
+    // ],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -217,6 +251,7 @@ exports.config = {
         if (test.error !== undefined) {
           browser.takeScreenshot();
         }
+    }
 
 
     /**
